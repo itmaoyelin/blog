@@ -1,0 +1,26 @@
+<!--继承模板骨架-->
+{{extend './common/layout.art' }}
+{{block 'link'}}
+<link rel="stylesheet" href='/admin/css/personal.css'>
+{{/block}}
+<!--填坑-->
+{{block 'main'}}
+    {{include './common/header.art'}}
+    <!-- 主体内容 -->
+    <div class="content">
+       	{{include './common/aside.art'}}
+        <div class="main">
+            <!-- 分类标题 -->
+            <div class="personal">
+                <h1>个人资料</h1>
+                <p>用户名：{{userInfo.username}}</p>
+                <p>用户ID: {{@userInfo._id}}</p>
+                <p>邮箱：{{userInfo.email}}</p>
+                <p>用户角色：{{userInfo.role=='admin'?'超级管理员':'普通用户'}}</p>
+                <p>用户状态：{{userInfo.state==0?'启用':'禁用'}}</p>    
+            </div>
+        
+        </div>
+    </div>
+    <!-- /主体内容 -->
+{{/block}}

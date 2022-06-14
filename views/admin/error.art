@@ -1,0 +1,16 @@
+<!--继承模板骨架-->
+{{extend './common/layout.art' }}
+
+<!--填坑-->
+{{block 'main'}}
+
+<h1>{{msg}}</h1>
+{{/block}}
+
+{{block 'script'}}
+<script>
+setTimeout(function(){
+    location.href='/admin/login';
+},3000);
+</script>
+{{/block}}
